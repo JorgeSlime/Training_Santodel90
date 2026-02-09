@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std; 
 #define sz(x) int((x).size())
-#define forn(i,a,b) for(__typeof__(b) i{a};i<(b);++i)
-#define forr(i,b,a) for(__typeof__(b) i{b};i>=(a);--i)
+#define forn(i,a,b) for(auto i{a};i<(b);++i)
+#define forr(i,b,a) for(auto i{b};i>=(a);--i)
 #define all(x) (x).begin(),(x).end()
 #if defined(SLIME)
     #include "/home/jorge/slime_debug.hpp"   
@@ -11,7 +11,6 @@ using namespace std;
     #define _(...) void(77)
 #endif
 using i64 = int64_t;       
-// FIRST SOLUTION WITH FT OFFLINE 
 class BIT{
 public: 
     int N;
@@ -27,7 +26,6 @@ public:
             ret += data[k];
         return ret;
     }
-    // corregir en adicion[k,k - 1]
     i64 range_query(int l, int r) const{
         return sum(r) - sum(l - 1);
     }
